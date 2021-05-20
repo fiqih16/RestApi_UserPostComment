@@ -5,6 +5,7 @@ use App\Http\Controllers\API\v1\ProductController;
 use App\Http\Controllers\API\v1\RegisterController;
 use App\Http\Controllers\API\v1\UserController;
 use App\Http\Controllers\API\v1\CategoryController;
+use App\Http\Controllers\API\v1\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -45,4 +46,5 @@ Route::middleware('auth:api')->get('/v1/products/searchByCategory/{category}', [
 Route::middleware('auth:api')->get('/v1/products/searchBykey', [ProductController::class, 'searchBykey']);
 
 // OrderController
-Route::middleware('auth:api')->get('/v1/order', [ProductController::class, 'store']);
+Route::middleware('auth:api')->get('/v1/order', [OrderController::class, 'store']);
+Route::middleware('auth:api')->get('/v1/order', [OrderController::class, 'destroy']);
