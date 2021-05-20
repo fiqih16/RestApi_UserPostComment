@@ -40,6 +40,6 @@ class LoginController extends Controller
         $user->api_token = null;
         $user->save();
 
-        return response(['Success' => true]);
+        return response(['Berhasil Logout' => true]);
     }
 }

@@ -24,6 +24,6 @@ class RegisterController extends Controller
 
         $user ->save();
 
-        return response(['success' => true]);
+        return response(['Berhasil Daftar' => true]);
     }
 }
