@@ -50,4 +50,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function userDetail()
+    {
+        return $this->hasOne(UserDetail::class);
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class)
+                    ->withPivot('order_id', 'price', 'quantity', 'order_at', 'checkout_at', 'status');
+    }
 }

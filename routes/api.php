@@ -47,4 +47,7 @@ Route::middleware('auth:api')->get('/v1/products/searchBykey', [ProductControlle
 
 // OrderController
 Route::middleware('auth:api')->get('/v1/order', [OrderController::class, 'store']);
-Route::middleware('auth:api')->get('/v1/order', [OrderController::class, 'destroy']);
+Route::middleware('auth:api')->get('/v1/order/delete', [OrderController::class, 'destroy']);
+Route::middleware('auth:api')->get('/v1/order/cart', [OrderController::class, 'cart']);
+Route::middleware('auth:api')->get('/v1/order/history', [OrderController::class,'history']);
+Route::middleware('auth:api')->post('/v1/order/checkout', [OrderController::class,'checkout']);

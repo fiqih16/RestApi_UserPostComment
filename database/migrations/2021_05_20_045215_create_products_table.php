@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('des_product');
             $table->text('gambar_product')->unique();
             $table->foreignId('category_id')->constrained();
+            $table->enum('status', ['public', 'private'])->default('public');
             $table->timestamps();
         });
     }
