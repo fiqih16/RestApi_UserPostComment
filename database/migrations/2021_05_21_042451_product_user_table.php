@@ -17,10 +17,10 @@ class ProductUserTable extends Migration
             $table->unsignedBigInteger('order_id');
             $table->foreignId('product_id')->constrained();
             $table->foreignId('user_id')->constrained();
-            $table->unsignedInteger('price');
+            $table->unsignedInteger('harga_product');
             $table->unsignedTinyInteger('quantity');
-            $table->dateTime('order_at');
-            $table->dateTime('checkout_at');
+            $table->timestamps();
+            $table->dateTime('checkout_at')->nullable()->default(null);
             $table->enum('status', ['cart', 'checkout', 'end']);
         });
     }

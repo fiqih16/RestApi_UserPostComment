@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\v1;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\products_user;
 use Carbon\Carbon;
 
 
@@ -29,14 +30,14 @@ class OrderController extends Controller
             }
         }
 
-        $price = Product::find($productId)->price;
+        $price = Product::find($productId)->harga_product;
         $today = Carbon::now();
 
         $user->products()->attach($productId, [
             'order_id' => $orderId,
-            'price' => $price,
+            'harga_product' => $price,
             'quantity' => $request->quantity,
-            'order_at' => $today,
+            'created_at' => $today,
             'status' => 'cart'
         ]);
 

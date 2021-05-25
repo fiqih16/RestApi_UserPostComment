@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('nama_product');
             $table->integer('harga_product');
             $table->string('des_product');
+            $table->integer('stock_product')->unsigned()->default(0);
             $table->text('gambar_product')->unique();
             $table->foreignId('category_id')->constrained();
             $table->enum('status', ['public', 'private'])->default('public');

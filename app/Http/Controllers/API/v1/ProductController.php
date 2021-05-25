@@ -29,10 +29,16 @@ class ProductController extends Controller
         return response(['data' => $products]);
     }
 
-    public function searchBykey(Request $request)
+    public function searchByKey(Request $request)
     {
-        $products = Product::where('name', 'LIKE', "%$request->key%")
-                            ->orwhere('description', 'LIKE', "%$request->key%")->get();
-        return response(['data' => $products]);
+        $products = Product::where('nama_product', 'LIKE', "%$request->key%")
+                            ->orwhere('des_product', 'LIKE', "%$request->key%")->get();
+        return response(['data' => $products->count(), 'product' => $products]);
+    }
+
+    public function searchKey(Request $request){
+        $products = Product::where('nama_product', 'LIKE', "%$request->key%")
+                            ->orwhere('des_product', 'LIKE', "%$request->key%")->get();
+        return response(['data' => $products->count(), 'product' => $products]);
     }
 }

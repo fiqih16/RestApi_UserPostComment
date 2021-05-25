@@ -21,6 +21,7 @@ class ProductTableSeeder extends Seeder
             'des_product' => 'Bahannya adem',
             'category_id' => 3,
             'gambar_product' => Str::random(10),
+            'stock_product' => 50,
         ]);
 
         DB::table('products')->insert([
@@ -29,6 +30,7 @@ class ProductTableSeeder extends Seeder
             'des_product' => 'Coffie dengan perpaduan creamy latte',
             'category_id' => 2,
             'gambar_product' => Str::random(10),
+            'stock_product' => 30,
         ]);
 
         DB::table('products')->insert([
@@ -37,6 +39,7 @@ class ProductTableSeeder extends Seeder
             'des_product' => 'Roti nya lembut',
             'category_id' => 1,
             'gambar_product' => Str::random(10),
+            'stock_product' => 40,
         ]);
     }
 }
